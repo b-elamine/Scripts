@@ -2,7 +2,7 @@
 
 req="{python3, pip, virtualenv, git}"
 
-echo -e "As an initial requirement you need $req.\nThe requirement is already satisfied?(y/n)"
+echo -e "As initial requirements you need $req.\nThe requirements are already satisfied?(y/n)"
 read response
 
 

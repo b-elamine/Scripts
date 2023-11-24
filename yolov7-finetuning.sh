@@ -43,6 +43,7 @@ then
 		echo -e "To run the trainig process make sure the virtual environment 'yolov7' is activated.\n"
 		echo -e "Copy the command below and run it from the current directory specifying the parameters : \n"
 		echo -e "python3 train.py --batch <BSIZE> --cfg cfg/training/yolov7-tiny.yaml --epochs <EPOCHS> --data ./customDataset/data.yaml --weights 'yolov7-tiny.pt'"
+  		deactivate
 		exit 2
 	fi
 else 

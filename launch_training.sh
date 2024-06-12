@@ -19,20 +19,16 @@ if [ -n "$url" ]; then
 	mkdir customDs
 	unzip customDs.zip -d ./customDs  1> /dev/null 
 	rm -rf customDs.zip
-	echo -e "train: ./train/images
-val: ./valid/images
-test: ./test/images
 
-nc: 16
-names: ['diesel', 'e85', 'gasoil', 'gazole', 'gpl', 'sansPlomb95', 'sansPlomb95e10', 'sansPlomb98', 'sp95', 'sp95e10', 'sp98', 'splomb95', 'splomb95e10', 'splomb98', 'super', 'superEthanole85']
 
-roboflow:
-  workspace: privaticsinriaproject
-  project: france-prix-de-carburant
-  version: 2
-  license: Private
-  url: https://universe.roboflow.com/privaticsinriaproject/france-prix-de-carburant/dataset/2
-" > ./customDs/data.yaml
+# Define the file path
+FILE="./customDs/data.yaml"
+
+# Use sed to replace the lines
+sed -i 's#train: ../train/images#train: ./train/images#' $FILE
+sed -i 's#val: ../valid/images#val: ./valid/images#' $FILE
+sed -i 's#test: ../test/images#test: ./test/images#' $FILE
+
 
 # Path to the configuration file settings.yaml
 config_file="$HOME/.config/Ultralytics/settings.yaml"
@@ -68,4 +64,3 @@ else
 	echo "yolo detect train data=data.yaml model=yolov8n.pt epochs=x batch=y imgsz=640 device=z"
 	exit 1
 fi
-

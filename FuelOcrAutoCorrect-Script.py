@@ -2,18 +2,18 @@ import json
 
 # Sample OCR data as if returned by Tesseract OCR
 ocr_data = {
-    'text': ['SP', '95', 'E10', 'Sp', 'tha', 'E85', 'GAZOLE', 'GAZOLE', 'GPL', 'M49', '20'],
-    'left': [10, 50, 90, 130, 170, 210, 250, 290, 330, 370, 410],
-    'top': [10, 10, 10, 50, 50, 50, 90, 130, 170, 210, 250],
-    'width': [30, 30, 30, 30, 30, 30, 50, 50, 30, 30, 30],
-    'height': [20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20],
-    'block_num': [1, 1, 1, 2, 2, 2, 3, 4, 5, 6, 7],
-    'par_num': [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-    'line_num': [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+    'text': ['Carrefour', 'market', 'Ma', 'station', '24/24.7/7', 'SP98', 'SP95', 'Gazole', '799', '199', '933', '0', '00'],
+    'left': [10, 100, 200, 300, 400, 10, 100, 200, 300, 400, 500, 600, 700],
+    'top': [10, 10, 10, 10, 10, 50, 50, 50, 50, 50, 50, 50, 50],
+    'width': [80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80],
+    'height': [20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20],
+    'block_num': [1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2],
+    'par_num': [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    'line_num': [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 }
 
-# Predefined fuel types in France
-fuel_types = ["SP95E10", "SP98", "E85", "GAZOLE", "GPL"]
+# Predefined fuel types in France (converted to uppercase)
+fuel_types = ["SP95E10", "SP98", "SP95", "E85", "GAZOLE", "GPL", "SPLOMB98", "SPLOMB95"]
 
 def combine_split_words(data):
     combined_data = []
